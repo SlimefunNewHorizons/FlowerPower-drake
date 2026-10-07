@@ -2,7 +2,7 @@ package io.ncbpfluffybear.flowerpower;
 
 
 import com.github.drakescraft_labs.labupdate.DrakesLabsReleaseUpdate;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 
 import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
 import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
@@ -10,7 +10,7 @@ import io.ncbpfluffybear.flowerpower.setup.ResearchSetup;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import listeners.Events;
 import utils.Utils;
 

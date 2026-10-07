@@ -1,11 +1,11 @@
 package io.ncbpfluffybear.flowerpower.setup;
 
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItem;
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
-import com.github.drakescraft_labs.slimefun4.implementation.SlimefunItems;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.collections.Pair;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.ncbpfluffybear.flowerpower.FlowerPowerItems;
 import io.ncbpfluffybear.flowerpower.FlowerPowerPlugin;
 import io.ncbpfluffybear.flowerpower.items.AttributeCharms;
@@ -22,7 +22,6 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
 import javax.annotation.Nonnull;
@@ -192,19 +191,19 @@ public class FlowerPowerItemSetup {
     static {
         // Build vanilla potion types for recipes
         PotionMeta speedPotionMeta = (PotionMeta) speedPotion.getItemMeta();
-        speedPotionMeta.setBasePotionData(new PotionData(PotionType.SWIFTNESS, false, true));
+        speedPotionMeta.setBasePotionType(PotionType.STRONG_SWIFTNESS);
         speedPotion.setItemMeta(speedPotionMeta);
 
         PotionMeta damagePotionMeta = (PotionMeta) damagePotion.getItemMeta();
-        damagePotionMeta.setBasePotionData(new PotionData(PotionType.STRENGTH, false, true));
+        damagePotionMeta.setBasePotionType(PotionType.STRONG_STRENGTH);
         damagePotion.setItemMeta(damagePotionMeta);
 
         PotionMeta healthPotionMeta = (PotionMeta) healthPotion.getItemMeta();
-        healthPotionMeta.setBasePotionData(new PotionData(PotionType.HEALING, false, true));
+        healthPotionMeta.setBasePotionType(PotionType.STRONG_HEALING);
         healthPotion.setItemMeta(healthPotionMeta);
 
         PotionMeta slownessPotionMeta = (PotionMeta) slownessPotion.getItemMeta();
-        slownessPotionMeta.setBasePotionData(new PotionData(PotionType.SLOWNESS, false, true));
+        slownessPotionMeta.setBasePotionType(PotionType.STRONG_SLOWNESS);
         slownessPotion.setItemMeta(slownessPotionMeta);
 
     }

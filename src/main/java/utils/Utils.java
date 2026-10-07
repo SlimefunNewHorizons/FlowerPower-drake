@@ -1,6 +1,6 @@
 package utils;
 
-import com.github.drakescraft_labs.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.ncbpfluffybear.flowerpower.FlowerPowerPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

@@ -1,13 +1,13 @@
 package io.ncbpfluffybear.flowerpower.items;
 
-import com.github.drakescraft_labs.slimefun4.api.items.ItemGroup;
-import com.github.drakescraft_labs.slimefun4.api.items.ItemSetting;
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
-import com.github.drakescraft_labs.slimefun4.api.items.settings.DoubleRangeSetting;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
-import com.github.drakescraft_labs.slimefun4.core.handlers.ItemUseHandler;
-import com.github.drakescraft_labs.slimefun4.implementation.items.SimpleSlimefunItem;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.items.settings.DoubleRangeSetting;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 import io.ncbpfluffybear.flowerpower.FlowerPowerPlugin;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Sound;
@@ -15,7 +15,7 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.EquipmentSlotGroup;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import utils.Utils;
@@ -67,8 +67,10 @@ public class AttributeCharms extends SimpleSlimefunItem<ItemUseHandler> implemen
 
             // Add specified attribute to offhand
             double level = ThreadLocalRandom.current().nextDouble(minLevel.getValue(), maxLevel.getValue());
-            AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), type.attribute.getKey().getKey(),
-                    level, type.operation, EquipmentSlot.OFF_HAND);
+            NamespacedKey modifierKey = new NamespacedKey(FlowerPowerPlugin.getInstance(),
+                    type.attribute.getKey().getKey() + "_" + UUID.randomUUID());
+            AttributeModifier modifier = new AttributeModifier(modifierKey, level, type.operation,
+                    EquipmentSlotGroup.OFFHAND);
             charmMeta.addAttributeModifier(type.attribute, modifier);
 
             // Update lore
