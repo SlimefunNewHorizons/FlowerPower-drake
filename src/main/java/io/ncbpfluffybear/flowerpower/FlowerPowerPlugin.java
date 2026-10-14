@@ -1,7 +1,6 @@
 package io.ncbpfluffybear.flowerpower;
 
 
-import com.github.drakescraft_labs.labupdate.DrakesLabsReleaseUpdate;
 import com.github.drakescraft_labs.slimefun4.libraries.dough.config.Config;
 
 import io.ncbpfluffybear.flowerpower.setup.FlowerPowerItemSetup;
@@ -28,7 +27,6 @@ public class FlowerPowerPlugin extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onEnable() {
-        DrakesLabsReleaseUpdate.schedule(this, "FlowerPower-drake");
 
 
         instance = this;
